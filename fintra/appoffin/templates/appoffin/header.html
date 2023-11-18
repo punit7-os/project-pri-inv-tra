@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%} {% endblock %}</title>
+  <style type="text/css">
+        .main-head{
+            margin: -9px -8px 8px -9px;
+            border: 4px solid black;
+            height: 5em;
+            width: auto;
+        }
+        .list-head{
+            list-style: none;
+            display: flex;
+
+        }
+        .list-head li a{
+            list-style: none;
+            margin: 9px;
+            text-decoration: none;
+            padding: 5px;
+            font-size: 31px;
+
+
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <nav class="main-head">
+        <ul class="list-head">
+            <li><a href="index">Home </a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+{% block body%} {% endblock %}
+</body>
+</html>

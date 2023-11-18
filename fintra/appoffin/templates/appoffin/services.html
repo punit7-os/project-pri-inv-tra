@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services We Provide</title>
+</head>
+<body>
+
+{% if getdetails %}
+    <ul>
+    {% for detail in getdetails %}
+        <li><a href="/appoffin/{{ service_title.id }}/">{{ detail.service_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Sorryfor your Inconvinience!.<br>
+    Something Went Wrong!.<br>
+    Please Visit Again. </p>
+{% endif %}
+</body>
+</html>
