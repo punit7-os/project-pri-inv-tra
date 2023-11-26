@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{getdetails}}
-</body>
-</html>
+{% extends 'header.html' %}
+{% block title%} {{knows.service_title}} {% endblock %}
+{% block style%}
+
+{% endblock %}
+{% block body%}
+<h1> {{knows.service_title}} </h1>
+<p> We Provides You All types of {{knows.service_title}}.</p>
+<!--<p> We Provides You All types of {{knows.service_desc}}</p>-->
+{% endblock %}

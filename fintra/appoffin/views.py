@@ -2,10 +2,12 @@ from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Service
+from django.template.response import TemplateResponse
 
 
-def index(request):
-    return render(request, "appoffin/index.html")
+
+# def index(request):
+#     return render(request, "appoffin/index.html")
 
 
 def services(request):
@@ -14,14 +16,17 @@ def services(request):
     return render(request, "appoffin/services.html", context)
 
 
-def virtualhr(request):
-    response = "We Provide All Type Of Virtal HR Manager Service."
-    return HttpResponse(response)
+def info(request, mid):
+    # fetch the services using id
+    know = Service.objects.filter(id=mid)
+    # print(know)
+    return render(request, "appoffin/info.html", {'knows': know[0]})
 
 
-def acservice(request, serv_id):
-    response = "We Provide All Type Of Accounting  Management Service."
-    return HttpResponse(response)
+def about(request):
+    return render(request, "appoffin/about.html")
+
+
 
 # def Services(request):
 #     try:
