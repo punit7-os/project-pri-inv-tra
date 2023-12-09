@@ -43,12 +43,51 @@
             justify-content: space-around;
         }
 
+/*         footer styling */
+         .footer{
+            background-color: #24262b;
+            position: fixed;
+
+            left:0;
+            bottom: 0;
+            width: 100%;
+
+        }
+        .footer-container{
+            max-width:1170px ;
+            margin: auto;
+        }
+        .footer-row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .footer-col ul{
+            list-style: none;
+        }
+
+
+        .footer-col{
+            width: 47%;
+            padding:0 15px;
+        }
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+
+
         {% block style%} {% endblock %}
 
     </style>
 
 </head>
 <body>
+
+
 <header>
     <nav class="main-head">
         <ul class="logo-head">
@@ -67,7 +106,30 @@
         </ul>
     </nav>
 </header>
+<footer class="footer">
+    <div class="footer-container">     
+        <div class="footer-row"> 
+            <div class="footer-col">
+                <h4>Prisha Investment & Travels</h4>
+                <ul>
+                        <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>  
+            <div class="footer-col">
+                <h4>About Us</h4>
+                    <ul>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+            </div>
+           
+        </div>
+    </div>
+</footer>
 {% block body %}
+
+
+
 {% endblock %}
 </body>
+
 </html>

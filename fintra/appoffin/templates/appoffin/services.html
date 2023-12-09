@@ -8,6 +8,8 @@
     {% if getdetails %}
         <ul>
         {% for detail in getdetails %}
+            {% load static %}
+            <img src="/static/{{ detail.logos }}" width="50px" height="30px" placeholder="{{ detail.service_title }}" >
             <li><a href="/appoffin/know-more/{{ detail.id }}">{{ detail.service_title }}</a></li>
         {% endfor %}
         </ul>
