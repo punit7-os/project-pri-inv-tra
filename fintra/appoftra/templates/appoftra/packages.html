@@ -1,8 +1,70 @@
-{% extends 'header.html' %}
-{% block title%} Packages We Provide{% endblock %}
-{% block style%}
+    {% extends 'base.html' %}
+    {% block title%} Services We Provide{% endblock %}
 
-{% endblock %}
-{% block body%}
-<h1> This is packages page</h1>
-{% endblock %}
+
+
+        {% block style%}
+        .service_box{
+        border: 2px solid red;
+        
+        padding: 3vh 2vw;
+        margin: 21px 16px;
+        flex-direction: column;
+        }
+        .service_box ul li{
+            list-style: none;
+        }
+
+        .service_box ul{
+            text-align: center;
+        }
+        .serv_main_box{
+            border:2px solid yellow;
+            height: 280px;
+            width: 340px;
+            margin: 2px;
+            padding:4px;
+            display:inline-block;
+            justify-content:center;
+            align-items:center;
+            text-
+        }
+        .serv_main_box a{
+            margin:40px;
+        }
+
+         .serv_main_box img{
+                    margin: 2px 45px;
+                width: 251px;
+            height: 226px;
+            }
+        {% endblock %}
+
+
+
+    {% block body%}
+
+        <div class="service_box">
+
+        {% if getdetails %}
+            <ul>
+               <!-- <div class="serivice_sing"> -->
+                    {% for detail in getdetails %}
+                    {% load static %}
+                        <li class="serv_main_box">
+                        <img src="/static/{{ detail.logos }}" placeholder="Service" >
+                    <a href="/appoffin/know-more/{{ detail.id }}">{{ detail.service_title }}</a>
+                    {% endfor %}
+                    </li>
+                <!-- </div> -->
+            
+            </ul>
+        </div>
+
+           
+        {% else %}
+            <p>Sorry for your Inconvinience!.<br>
+            Something Went Wrong!.<br>
+            Please Visit Again. </p>
+        {% endif %}
+    {% endblock %}
