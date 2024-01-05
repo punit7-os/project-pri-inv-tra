@@ -1,5 +1,5 @@
     {% extends 'base.html' %}
-    {% block title%} Services We Provide{% endblock %}
+    {% block title%} Packages We Have{% endblock %}
 
 
 
@@ -53,7 +53,7 @@
                     {% load static %}
                         <li class="serv_main_box">
                         <img src="/static/{{ detail.logos }}" placeholder="Service" >
-                    <a href="/appoffin/know-more/{{ detail.id }}">{{ detail.service_title }}</a>
+                    <a href="/appoftra/know-more/{{ detail.id }}">{{ detail.package_title }}</a>
                     {% endfor %}
                     </li>
                 <!-- </div> -->
@@ -67,4 +67,4 @@
             Something Went Wrong!.<br>
             Please Visit Again. </p>
         {% endif %}
-    {% endblock %}
+    {% endblock %}`
