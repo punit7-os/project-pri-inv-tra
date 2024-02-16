@@ -14,26 +14,43 @@ th {
 }
 
 .table{
+text-align: center;
  border: 2px solid yellow;
-}
+ padding: 5% 39%;
 
+}
+table{
+
+  font-size:30px;
+  }
+.map{
+border: 2px solid black;
+margin: 25px;
+font-size:24px;
+text-align:center;
+}
 {% endblock %}
 </style>
 
 {% block body%}
 
 <div class="table">
-<table>
-<tr><th>Sunday</th><td>Closed</td></tr>
-<tr><th>Monday</th><td>9am - 5pm</td></tr>
-<tr><th>Tuesday</th><td>9am - 5pm</td></tr>
-<tr><th>Wednesday</th><td>9am - 5pm</td></tr>
-<tr><th>Thursday</th><td>9am - 5pm</td></tr>
-<tr><th>Friday</th><td>9am - 5pm</td></tr>
-<tr><th>Saturday</th><td>9am - 5pm</td></tr>
+       <h1>OUR TIME</h1>
 
+
+<table>
+
+<tr><th>Monday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Tuesday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Wednesday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Thursday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Friday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Saturday:&nbsp;</th><td>9am - 5pm</td></tr>
+<tr><th>Sunday:&nbsp;</th><td>Closed</td></tr>
 </table>
-      </div>
-<p><label for="address"><b>Address:</b></label>1ST FLOOR DN SHOPPING CENTER OPP GANDHI LIBRARY VALSAD, GUJARAT-396001</p>
+</div>
+<div class="map">
+<p><label for="address"><b>Address:&nbsp;</b></label>1ST FLOOR DN SHOPPING CENTER OPPOSITE GANDHI LIBRARY, VALSAD, GUJARAT-396001</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.4527657911194!2d72.92938989999999!3d20.6103939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0e935725130af%3A0x639502a3555f0ff7!2sDN%20Sopping%20center!5e0!3m2!1sen!2sin!4v1703180136772!5m2!1sen!2sin" width="1024" height="612" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-{% endblock %}
+</div>
+      {% endblock %}

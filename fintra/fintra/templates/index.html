@@ -1,76 +1,76 @@
-{%  extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title%} Prisha Investments & Holidays {% endblock %}
 {% block style%}
 body{
-    top:0;
-    left:0;
- 
+top:0;
+left:0;
+
 }
 
 .ind-main{
-    position: relative;
-    left:0;
-    top: 0;
-    bottom: 4%;
-    width:100%;
-    height:100vh;
-    animation: ind-slider 12s cubic-bezier(0.5, 0.5, 0.4, 1.2) infinite;
-    background-size: cover;
+position: relative;
+left:0;
+top: 0;
+bottom: 4%;
+width:100%;
+height:100vh;
+animation: ind-slider 12s cubic-bezier(0.5, 0.5, 0.4, 1.2) infinite;
+background-size: cover;
 }
 
 .ind-outer{
-    position: absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100vh;
-    background: rgba(0,0,0,0.5); 
+position: absolute;
+left:0;
+top:0;
+width:100%;
+height:100vh;
+background: rgba(0,0,0,0.5);
 }
 
 .ind-detail{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    text-align:center;
+position:absolute;
+left:50%;
+top:50%;
+transform: translate(-50%, -50%);
+text-align:center;
 }
 .ind-detail h1{
-    font-size: 4em;
-    color:#fff;
+font-size: 4em;
+color:#fff;
 }
 .ind-detail h2{
-    text-transform:capitalize;
-    color:#fff;
+text-transform:capitalize;
+color:#fff;
 }
 .ind-detail h2 span:nth-child(1){
-    color:red;
+color:red;
 }
 .ind-detail h2 span:nth-child(2){
-    color:yellow;
+color:yellow;
 }
 @keyframes ind-slider{
-            {% load static %}
+{% load static %}
 
-    0%,100%{
+0%,100%{
 
-        background-image: url({%static './media/images/finplan.jpg' %});
-    }
-    25%{
-        background-image: url({%static './media/images/travel.jpg' %});
-    }
-    50%{
-        background-image: url({%static './media/images/finance.jpg' %});
-    }
-    75%{
-        background-image: url({%static './media/images/finplan.jpg' %});
-    }
+background-image: url({%static './media/images/finplan.jpg' %});
+}
+25%{
+background-image: url({%static './media/images/travel.jpg' %});
+}
+50%{
+background-image: url({%static './media/images/finance.jpg' %});
+}
+75%{
+background-image: url({%static './media/images/finplan.jpg' %});
+}
 }
 
 .menu{
-        border: 2px solid red;
-    height: 100%;
-    width: 100%;
-    background: transparent;
+border: 2px solid red;
+height: 100%;
+width: 100%;
+background: transparent;
 display:flex;
 
 }
@@ -80,36 +80,77 @@ border: 4px solid grey;
 margin: 4px;
 height: 50%;
 width: 50%;
-flex-direction: row;
+
+padding: 44px;
+}
+
+<!-- this is the css of service box side-->
+.menubox .setter{
+justify-content: space-around;
+display: inline-block;
+border: 4px solid green;
+}
+.menubox ul li{
+border: 2px solid yellow;
+
+height: 5rem;
+width: 5rem;
+list-style: none;
+margin: 2px;
+display: inline-block
+
 }
 
 
 {% endblock %}
 
 {% block body%}
-    <div class="ind-main">
+<div class="ind-main">
     <div class="ind-outer">
-    <div class="ind-detail">
-        <h1>Prisha Investment and Travels</h1>
-        <h2>
-            <span>Plan Your Finance With Us</span> |
-            <span>Travel With Joy</span>
+        <div class="ind-detail">
+            <h1>Prisha Investment and Travels</h1>
+            <h2>
+                <span>Plan Your Finance With Us</span> |
+                <span>Travel With Joy</span>
 
-        </h2>
-    </div>    
+            </h2>
+        </div>
     </div>
-    </div>
-    <div class="menu">
-        <div class="menubox pack">
-        
-     </div>
+</div>
+<div class="menu">
     <div class="menubox serv">
         
+        <ul class="setter">
+    <!-- {% if getdetails %} -->
+        <!-- {% for detail in getdetails %} -->
+            <!-- {% load static %} -->
+            <li>
+                
+            <!-- <a>{{ detail.service_title }}</a> -->
+            </li>
+            <li></li>
+            <li></li>
+        <!-- {% endfor %}  -->
+          
+
+        </ul>
+    <!-- {% else %}
+        <p>Sorry for your Inconvinience!.<br>
+        Something Went Wrong!.<br>
+        Please Visit Again. </p>
+    {% endif %} -->
+
+
+
     </div>
+    <div class="menubox pack">
+        <ul class="setter">
+            <li></li>
+            <li></li>
+     
+        </ul>
+
     </div>
+
+</div>
 {% endblock %}
-
-
-
-
-

@@ -1,7 +1,14 @@
 {% include 'header.html' %}
+<head>{% block head %}
+	<script>
+	 {% block script %} 
+    
+	console.log(1+2);
+	{% endblock %}</script>
+	  {% endblock %}
 <style type="text/css">
 	body {
-		background-color: #76d2e1;
+		background-color: #f2f7f8;
 		height: 98vh;
 		width: 98vw;
 		overflow-x: hidden;
@@ -10,6 +17,7 @@
 		
 	{% endblock %}
 </style>
+</head>
 <body>
 	
 {% block body %}
