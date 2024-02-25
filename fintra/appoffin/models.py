@@ -9,3 +9,14 @@ class Service(models.Model):
 
     def __str__(self):
         return self.service_title
+    
+class User(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    u_fname = models.CharField(max_length=23)
+    u_lname = models.CharField(max_length=23)
+    u_email = models.EmailField(unique=True, blank=False)
+    u_mob = models.IntegerField()
+    u_pass = models.CharField(max_length=23)    
+    
+    def __str__(self):
+        return self.u_fname
