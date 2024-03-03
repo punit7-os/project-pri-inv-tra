@@ -92,7 +92,6 @@ border: 4px solid green;
 }
 .menubox ul li{
 border: 2px solid yellow;
-
 height: 5rem;
 width: 5rem;
 list-style: none;
@@ -100,10 +99,15 @@ margin: 2px;
 display: inline-block
 
 }
+.setter ul li img{
+    margin: 2px 45px;
+width: 251px;
+height: 226px;
+}
 
 {% block script %} 
     
-	console.log(1+4);
+	{% comment %} console.log(1+4); {% endcomment %}
     
 	{% endblock %}
 
@@ -126,24 +130,27 @@ display: inline-block
     <div class="menubox serv">
         
         <ul class="setter">
-    <!-- {% if getdetails %} -->
-        <!-- {% for detail in getdetails %} -->
-            <!-- {% load static %} -->
+    {% if getdetails %}
+        {% for detail in getdetails %}
+            {% load static %}
             <li>
-                
-            <!-- <a>{{ detail.service_title }}</a> -->
+                <!-- <img src="{{ detail.logos }}" alt="Services" style="
+                    margin: 2px 45px;
+                width: 251px;
+            height: 226px;
+            "> -->
+            <a>{{ detail.service_title|slice:"0:9" }}...</a>
             </li>
-            <li></li>
-            <li></li>
-        <!-- {% endfor %}  -->
+            
+        {% endfor %} 
           
 
         </ul>
-    <!-- {% else %}
+    {% else %}
         <p>Sorry for your Inconvinience!.<br>
         Something Went Wrong!.<br>
         Please Visit Again. </p>
-    {% endif %} -->
+    {% endif %} 
 
 
 

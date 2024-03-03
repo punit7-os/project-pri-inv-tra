@@ -10,7 +10,7 @@ $('.message a').click(function(){
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
-  width: 360px;
+  width: 460px;
   padding: 8% 0 0;
   margin: auto;
   height: 100vh;
@@ -55,11 +55,11 @@ $('.message a').click(function(){
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+  color: #020810;
+  font-size: 16px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: #08004d;
   text-decoration: none;
 }
 .form .register-form {
@@ -101,7 +101,7 @@ $('.message a').click(function(){
 body {
   background: #76b852; /* fallback for old browsers */
   background: rgb(141,194,111);
-  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+  background: linear-gradient(90deg, rgb(32 42 132) 0%, rgb(73 77 115) 50%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
@@ -118,10 +118,10 @@ body {
             <p class="message">Already registered? <a href="#">Sign In</a></p>
           </form>
           <form class="login-form">
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
             <button>login</button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Not registered? <a href="{% url 'signup' %}">Create an account</a></p>
           </form>
         </div>
       </div>

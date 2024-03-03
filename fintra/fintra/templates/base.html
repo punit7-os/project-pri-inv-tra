@@ -1,22 +1,6 @@
 {% include 'header.html' %}
 <head>{% block head %}
-	<script>
-		 window.addEventListener("load", () => {
-        const loader = document.querySelector(".loader");
-
-        loader.classList.add("loader-hidden");
-
-        loader.addEventListener("transitioned", () =>{
-            document.body.removeChild("loader");
-        })
-    })
-
-	 {% block script %} 
 	
-    
-	console.log(1+2);
-	{% endblock %}
-	</script>
 	  {% endblock %}
 <style type="text/css">
 	body {
@@ -26,7 +10,7 @@
 		overflow-x: hidden;
 	}
 	
-.loader{
+    .loader{
     position : fixed;
     top : 0;
     left : 0;
@@ -67,12 +51,31 @@
 		
 	{% endblock %}
 </style>
+<script>
+    window.addEventListener("load", () => {
+   const loader = document.querySelector(".loader");
+
+   loader.classList.add("loader-hidden");
+
+   loader.addEventListener("transitioned", () =>{
+       document.body.removeChild("loader");
+   })
+})
+
+{% block script %} 
+
+
+console.log(1+2);
+{% endblock %}
+</script>
 </head>
 <body>
 	
+    
 {% block body %}
-<div class="loader"></div>
 {% endblock %}
 {% include 'footer.html' %}
+<div class="loader"></div>
 
 </body>
+
