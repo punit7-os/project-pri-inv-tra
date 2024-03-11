@@ -1,6 +1,10 @@
 {% extends 'base.html' %} 
 {% block title%} Login {% endblock %}
 {% block script %} 
+
+var msg = alert('Your Account Has Been Created Successfully')
+
+
     
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
@@ -121,8 +125,9 @@ body {
             <input type="text" placeholder="Username"/>
             <input type="password" placeholder="Password"/>
             <button>login</button>
-            <p class="message">Not registered? <a href="{% url 'signup' %}">Create an account</a></p>
+            <p class="message">Not registered? <a href="{% url 'signuppage' %}">Create an account</a></p>
           </form>
+        </form>
         </div>
       </div>
       

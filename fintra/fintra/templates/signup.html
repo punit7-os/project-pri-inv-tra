@@ -2,7 +2,8 @@
 {% extends 'base.html' %} 
 {% block title%} Sign Up Here {% endblock %}
 {% block script %} 
-    
+var msg = alert('Your Account Has Been Created Successfully')
+
 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 
 	{% endblock %}
@@ -772,11 +773,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     <!-- <h1>Creative SignUp Form</h1> -->
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="#" method="post">
-                <input class="text" type="text" name="Username" placeholder="Username" required="">
-                <input class="text email" type="email" name="email" placeholder="Email" required="">
-                <input class="text" type="password" name="password" placeholder="Password" required="">
-                <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+            <form action="/signup" method="post">
+                <input class="text" type="text" name="name" id="name" placeholder="Name" required="">
+                <input class="text email" type="email" name="email" id="email" placeholder="Email" required="">
+               
+                <!-- <input class="text" type="tel" name="phone" id="phone" placeholder="Phone Number" required=""> -->
+
+                <input class="text" type="password" name="password" id="password" placeholder="Password" required="">
+                <input class="text w3lpass" type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required="">
                 <div class="wthree-text">
                     <label class="anim">
                         <input type="checkbox" class="checkbox" required="">
@@ -784,12 +788,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                     </label>
                     <div class="clear"> </div>
                 </div>
+                {% csrf_token %}
                 <input type="submit" value="SIGNUP">
             </form>
             <p>Already have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
         </div>
     </div>
-    <!-- copyright -->
+    <!-- copyright N
     <!-- <div class="colorlibcopy-agile">
         <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
     </div> -->
