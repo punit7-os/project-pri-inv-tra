@@ -2,13 +2,14 @@
 {% block title%} Login {% endblock %}
 {% block script %} 
 
-var msg = alert('Your Account Has Been Created Successfully')
+<!-- var msg = alert('Your Account Has Been Created Successfully') -->
 
-
+const setUpss = {msg :"Your Account Has Been Created Successfully!"};
     
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
  });
+
 	{% endblock %}
 {% block style%}
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -113,7 +114,8 @@ body {
 {% endblock %}
 {% block body%}
     <div class="login-page">
-        <div class="form">
+      <div class="form">
+          <h3 id="succ"></h3>
           <form class="register-form">
             <input type="text" placeholder="name"/>
             <input type="password" placeholder="password"/>
@@ -122,8 +124,8 @@ body {
             <p class="message">Already registered? <a href="#">Sign In</a></p>
           </form>
           <form class="login-form">
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
+            <input type="text" placeholder="Username" required/>
+            <input type="password" placeholder="Password" required/>
             <button>login</button>
             <p class="message">Not registered? <a href="{% url 'signuppage' %}">Create an account</a></p>
           </form>

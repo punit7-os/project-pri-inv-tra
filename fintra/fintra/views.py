@@ -19,22 +19,32 @@ def signuppage(request):
 def handleSignup(request):
     if request.method == "POST":
          #Get the parameters
-        name = request.POST['name']
+        username = request.POST.get('username') 
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        phone = request.POST['phone'] 
         email = request.POST['email']
-        # phone = request.POST['phone'] 
         password = request.POST['password']
         cpassword = request.POST['cpassword']
 
         #Check erroeneous inputs
-
+        # if phone (unique != True)
+        if password != cpassword :
+             return HttpResponse('document.getElementById("err").innerHTML = setUp.passE;') and redirect (signuppage)
+        
+        if len (phone) < 10:
+             return HttpResponse('document.getElementById("err").innerHTML = setUp.phpneE;') and redirect (signuppage)
+             
 
         #Create the user
-        myuser = User.objects.create_user(name,email,password)
+        myuser = User.objects.create_user(username = username , email = email, password = password)
+        myuser.first_name = fname
+        myuser.last_name = lname
         myuser.save()
-        print(name)
+        print('hello')
         
-        return HttpResponse('msg') and redirect('login')  
+        return HttpResponse('document.getElementById("succ").innerHTML = setUpss.msg;') and  redirect('login') 
 
     else:
             return HttpResponse('404 - Not Found')    
-    print(error)
+            # print(error)

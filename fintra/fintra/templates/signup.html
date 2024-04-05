@@ -2,12 +2,19 @@
 {% extends 'base.html' %} 
 {% block title%} Sign Up Here {% endblock %}
 {% block script %} 
-var msg = alert('Your Account Has Been Created Successfully')
+
+
+
+const setUp ={passE :"Your Password do not match with Confirm Password. <br>Please Try Again.",phoneE:"Phone Number Must Be In 10 Numbers "};
 
 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 
 	{% endblock %}
+
 {% block style%}
+<style>
+
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -151,7 +158,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 3em;
   }
   
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
     font-size: 0.9em;
     color: #fff;
     font-weight: 100;
@@ -171,7 +178,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: 'Roboto', sans-serif;
   }
   
-  input.email, input.text.w3lpass {
+  input.email,input.phone, input.text.w3lpass {
     margin: 2em 0;
   }
   
@@ -535,7 +542,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   /*-- responsive-design --*/
   @media(max-width:1440px) {
-    input[type="text"], input[type="email"], input[type="password"] {
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
       width: 94%;
     }
   }
@@ -591,7 +598,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       width: 58%;
     }
   
-    input[type="text"], input[type="email"], input[type="password"] {
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
       width: 93%;
     }
   }
@@ -653,7 +660,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       padding: 1.8em;
     }
   
-    input[type="text"], input[type="email"], input[type="password"] {
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
       width: 91%;
     }
   
@@ -729,7 +736,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
       margin: 0 0 1em;
     }
   
-    input[type="text"], input[type="email"], input[type="password"] {
+    input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
       width: 89.5%;
       font-size: 0.85em;
     }
@@ -767,27 +774,36 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
   }
 
+  #err{
+  color:white;
+}</style>
 {% endblock %}
 {% block body%}
 <div class="main-w3layouts wrapper">
     <!-- <h1>Creative SignUp Form</h1> -->
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="/signup" method="post">
-                <input class="text" type="text" name="name" id="name" placeholder="Name" required="">
-                <input class="text email" type="email" name="email" id="email" placeholder="Email" required="">
-               
-                <!-- <input class="text" type="tel" name="phone" id="phone" placeholder="Phone Number" required=""> -->
+          {% csrf_token %}
 
+          <h4 id="err"> </h4>
+            <form action="/signup" method="post">
+              
+                <input class="text" type="text" name="username" id="username" placeholder="Username should be alphanumeric and unique" required pattern="[a-zA-Z0-9]+" />
+                <input class="text w3lpass" type="text" name="fname" id="fname" placeholder="First Name" required="">
+                <input class="text w3lpass" type="text" name="lname" id="lname" placeholder="Last Name" required="">
+                <!-- <input class="text" type="tel" name="phone" id="phone" placeholder="Phone Number" required=""> -->
+                <input class="text w3lpass" type="tel" name="phone" id="phone" placeholder="Phone Number" required="">
+                <input class="text email" type="email" name="email" id="email" placeholder="Email" required="">
+              
                 <input class="text" type="password" name="password" id="password" placeholder="Password" required="">
                 <input class="text w3lpass" type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" required="">
-                <div class="wthree-text">
+                <!-- <div class="wthree-text">
                     <label class="anim">
                         <input type="checkbox" class="checkbox" required="">
                         <span>I Agree To The Terms & Conditions</span>
                     </label>
                     <div class="clear"> </div>
-                </div>
+                </div> -->
                 {% csrf_token %}
                 <input type="submit" value="SIGNUP">
             </form>
@@ -795,7 +811,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         </div>
     </div>
     <!-- copyright N
-    <!-- <div class="colorlibcopy-agile">
+     <div class="colorlibcopy-agile">
         <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
     </div> -->
     <!-- //copyright -->
