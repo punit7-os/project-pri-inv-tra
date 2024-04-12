@@ -25,7 +25,9 @@ urlpatterns = [
     path("appoftra/", include("appoftra.urls")),
     path("admin/", admin.site.urls),
     path("", views.index),
-    path("login", views.login, name="login"),
+    path("loginpage", views.loginpage, name="loginpage"),
     path("signuppage", views.signuppage, name="signuppage"),
     path("signup", views.handleSignup, name="handleSignup"),
+    path("login", views.handleLogin, name="handleLogin"),
+    path("logout", views.handleLogout, name="handleLogout"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

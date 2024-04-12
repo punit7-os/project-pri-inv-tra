@@ -5,6 +5,8 @@
 
 
 
+
+
 const setUp ={passE :"Your Password do not match with Confirm Password. <br>Please Try Again.",phoneE:"Phone Number Must Be In 10 Numbers "};
 
 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
@@ -14,8 +16,8 @@ addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); func
 {% block style%}
 <style>
 
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -148,8 +150,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   .main-agileinfo {
-    width: 35%;
-    margin: 3em auto;
+    width: 32%;
+    margin: 1em auto;
     background: rgba(0, 0, 0, 0.18);
     background-size: cover;
   }
@@ -165,7 +167,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     width: 94.5%;
     display: block;
     border: none;
-    padding: 0.8em;
+    padding: 0.2em;
     border: solid 1px rgba(255, 255, 255, 0.37);
     -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
@@ -228,7 +230,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0.9em;
     -webkit-appearance: none;
     width: 100%;
-    margin: 2em 0;
+    margin: 1em 0;
     letter-spacing: 4px;
   }
   
@@ -589,7 +591,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
   
     .main-w3layouts {
-      padding: 2em 0 1em;
+      padding: 1em 0 1em;
     }
   }
   
@@ -775,7 +777,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
 
   #err{
-  color:white;
+  color:rgb(163, 23, 23);
 }</style>
 {% endblock %}
 {% block body%}
@@ -807,7 +809,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
                 {% csrf_token %}
                 <input type="submit" value="SIGNUP">
             </form>
-            <p>Already have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+            <p>Already have an Account? <a href="{% url 'loginpage' %}"> Login Now!</a></p>
         </div>
     </div>
     <!-- copyright N

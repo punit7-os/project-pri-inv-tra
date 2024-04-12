@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static './external/bootstrap/bootstrap.min.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static './external/bootstrap/bootstrap.min.css.map'%}" /> -->
+    <script src="{% static './external/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static './external/bootstrap/bootstrap.bundle.min.js.map' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,7 +204,7 @@
                 <li><a href="{% url 'services' %}">Services</a></li>
                 <li><a href="{% url 'packages' %}">Packages</a></li>
                 <li><a href="{% url 'about' %}">About Us</a></li>
-                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'loginpage' %}">login</a></li>
 
             </ul>
 

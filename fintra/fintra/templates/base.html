@@ -1,8 +1,9 @@
 {% include 'header.html' %}
 <head>{% block head %}
 	
-	  {% endblock %}
+	
 <style type="text/css">
+    	{% block style %}
 	body {
 		background-color: #f2f7f8;
 		height: 98vh;
@@ -47,11 +48,22 @@
 
     }
 }
-	{% block style%}
-		
-	{% endblock %}
+        {% endblock %}
 </style>
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message</strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+    {% endblock %}
 <script>
+    var alertList = document.querySelectorAll('.alert')
+var alerts =  [].slice.call(alertList).map(function (element) {
+  return new bootstrap.Alert(element)
+})
+
+
     window.addEventListener("load", () => {
    const loader = document.querySelector(".loader");
 
@@ -73,6 +85,7 @@
 console.log(1+2);
 {% endblock %}
 </script>
+
 </head>
 <body>
 	
