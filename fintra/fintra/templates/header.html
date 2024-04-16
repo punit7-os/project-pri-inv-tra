@@ -90,6 +90,27 @@
             justify-content: space-around;
         }
 
+        .dropdown-head li{
+            display: block;
+
+        }
+        .dropdown-head{
+            width: 10%;
+            position: absolute;
+            list-style: none;
+            background: #d6dbe6;
+            display: none;
+            z-index: 999;
+
+        }
+        .list-head li .dropdown-head li a{
+            font-size: 23px;
+        }
+        .list-head li:hover .dropdown-head{
+            display: block;
+            border: 2px solid blue;
+            border-radius: 30px;
+        }
 
         @media screen and (max-width: 1200px) {
             .main-head {
@@ -204,7 +225,20 @@
                 <li><a href="{% url 'services' %}">Services</a></li>
                 <li><a href="{% url 'packages' %}">Packages</a></li>
                 <li><a href="{% url 'about' %}">About Us</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="#">My Account</a>
+                <ul class="dropdown-head">
+                    <li><a href="#">Username : {{request.user}}</a></li>
+                    <li><a href="{% url 'handleLogout' %}">Logout</a></li>
+                </ul>
+                </li>
+                <!-- </li>  <a>hello ! {{request.user}}</a>  -->
+                
+                {% else %}
                 <li><a href="{% url 'loginpage' %}">login</a></li>
+                  
+                {% endif %}
+                
 
             </ul>
 

@@ -13,7 +13,7 @@ def index(request):
     return render(request, "index.html", context)
 
 def loginpage(request):
-    messages.success(request,'Welcome to login page')
+    # messages.success(request,'Welcome to login page')
     return render(request, "login.html")
 
 def signuppage(request):
@@ -74,11 +74,16 @@ def handleLogin(request):
 
         if user is not None:
              login(request,user)
-             return redirect("/")
+             messages.success(request,"Successfully Logged In!")
+             return redirect("Home")
         else:
-            HttpResponse ("error logout message")
-     return HttpResponse("handleLogin")
+            messages.success(request,"Invalid Credentials!, Please Try Again.")
+            return redirect("loginpage")
+        
 
+     return HttpResponse('404 - Not Found')
 
 def handleLogout(request):
-     return HttpResponse("logout")
+     logout(request)
+     messages.success(request,"Successfully Logged Out!")
+     return redirect('Home')

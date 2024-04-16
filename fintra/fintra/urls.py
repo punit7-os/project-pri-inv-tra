@@ -24,7 +24,7 @@ urlpatterns = [
     path("appoffin/", include("appoffin.urls")),
     path("appoftra/", include("appoftra.urls")),
     path("admin/", admin.site.urls),
-    path("", views.index),
+    path("", views.index,name="Home"),
     path("loginpage", views.loginpage, name="loginpage"),
     path("signuppage", views.signuppage, name="signuppage"),
     path("signup", views.handleSignup, name="handleSignup"),
