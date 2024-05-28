@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        } */
+        </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu-icon">
+        <!-- <button class="material-symbols-outlined" onclick="ocMenu(this)">menu</button> -->
+
+        <button id="menu-icon" class="material-symbols-outlined" onclick="menuIcon()">menu</button>
+    
+        <!-- <span class="material-symbols-outlined" onclick="ocMenu()">menu</span> -->
+        <!-- <span class="material-symbols-outlined">close</span> -->
+        
+    </div>
+</body>
+<script>
+//    function closemenu(){
+//     let innerHTML = "html";
+//     console.log("yes")
+//    }
+//     function ocMenu(icon){
+            
+//             document.getElementsByClassName("material-symbols-outlined").innerHTML = "close";
+//             console.log("th");
+//     }
+ function menuIcon(){
+    var icon = document.getElementById('menu-icon')
+    if(icon.innerHTML === 'menu'){
+        icon.innerHTML = 'close';
+    }else{
+        icon.innerHTML = 'menu'
+    }
+ }
+
+</script>
+</html>

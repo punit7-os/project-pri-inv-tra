@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static './external/bootstrap/bootstrap.min.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static './external/bootstrap/bootstrap.min.css.map'%}" /> -->
+    <script src="{% static './external/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static './external/bootstrap/bootstrap.bundle.min.js.map' %}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital@1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital@1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script>
-    {% block script %} 
+        {% block script %}
+        let closeme = document.getElementsByClassName('list-head');
+        display = 0;
+
+        function ocMenu(){
+            if(display == 1)
+            {
+                closeme.style.display= "flex";
+                display = 0;
+            }
+            else
+            {
+                colseme.style.display="none";
+                display = 1;
+            }
+        }
+        // function closeMenu() {
+        //     document.body.getElementsByClassName('list-head').style.display = "none";
+        //     // document.body.getElementsByClassName('list-head').style.d = "-100vw";
+        //     // document.body.getElementsByClassName('list-head').style.marginLeft = "-100vw";
+        //     // document.body.getElementsByClassName('list-head')= console.log("activated close Menu")
+        //     // document.body.getElementsByClassName('list-head')= 
+        //     // console.log("activated close Menu")
+        // }
+
+        // function openMenu() {
+        //     // document.getElementsByClassName('btn-head').innerHTML = Date()
+        //         // console.log("hiii")
+        //         document.body.getElementsByClassName('list-head').style.display = "flex";
+        //         document.body.getElementsByClassName('list-head').style.marginLeft = "100vw";
+
+        //         // document.body.getElementsByClassName('list-head')= console.log("activated open Menu")
+        //         // document.body.getElementsByClassName('list-head')= console.log
+        //         // ("activated open Menu")
+
+        // }
+
+
         window.addEventListener("load", () => {
-       const loader = document.querySelector(".loader");
+            const loader = document.querySelector(".loader");
 
-       loader.classList.add("loader-hidden");
+            loader.classList.add("loader-hidden");
 
-       loader.addEventListener("transitioned", () =>{
-           document.body.removeChild("loader");
-       })
-   })
-    {% endblock %}
-   </script>
-     <style type="text/css">
-    *{
-        font-family: "Barlow", sans-serif;
-    }
-        .main-head{
+            loader.addEventListener("transitioned", () => {
+                document.body.removeChild("loader");
+            })
+        })
+        {% endblock %}
+    </script>
+    <style type="text/css">
+        * {
+            font-family: "Barlow", sans-serif;
+        }
+
+        .main-head {
             margin: -9px -8px 8px -9px;
 
             height: 6em;
             width: auto;
-            display: flex ;
+            display: flex;
             background: hsl(0, 0%, 100%);
         }
-        .list-head{
+
+        .list-head {
             list-style: none;
             display: flex;
-            margin: auto;
-          
+            margin: auto 0 auto 33rem;
+
 
         }
-        .list-head li a{
+
+        .list-head li a {
             list-style: none;
             margin: 9px;
             text-decoration: none;
@@ -50,7 +100,8 @@
 
 
         }
-        .list-head li a:hover {
+
+        .list-head li a:hover {8
             list-style: none;
             margin: 9px;
             text-decoration: none;
@@ -61,23 +112,146 @@
 
 
         }
-        .logo-head{
-            margin: auto;
-            
-        }
 
-        .logo-head img{
-                height: 115px;
-                width: 232px;
-                filter: contrast(163%);
+        .logo-head {
+            margin: 0px;
 
         }
-        
-        ul{
+
+        .logo-head img {
+            height: 14vh;
+            width: 20vw;
+            filter: contrast(163%);
+        }
+
+        .logo-head ul {
             justify-content: space-around;
         }
-        
-        {% block style%} {% endblock %}
+
+        .dropdown-head li {
+            display: inline-block;
+
+        }
+
+        .dropdown-head {
+            width: 16%;
+            position: absolute;
+            list-style: none;
+            background: #d6dbe6;
+            display: none;
+            z-index: 99;
+            margin: 2px 2px;
+            padding: 13px 26px;
+        }
+
+        .list-head li .dropdown-head li a {
+            font-size: 18px;
+        }
+
+        .list-head li:hover .dropdown-head {
+            display: flex;
+            flex-direction: column;
+            align-items: self-start;
+
+            border: 2px solid blue;
+            border-radius: 30px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .main-head {
+                margin: 1px 1px 1px 0px;
+                flex-direction: column;
+                padding: 2px;
+                height: 15vh;
+                width: 100vw;
+                scroll-behavior: none;
+                z-index: 200;
+                border: 2px solid #50d2ef;
+                display: flex;
+                background: hsl(0, 14%, 99%);
+                color: rgb(13, 153, 32);
+            }
+
+            .cross-btn {
+                background: red;
+                height: 85px;
+                width: 72px;
+                padding: -1px;
+                align-self: flex-start;
+                display: block;
+                margin: 39px 0 -81px 0;
+                /* float: right; */
+                /* margin: 41% 45% 48% 48% 47%; */
+                /* display: inline-flex; */
+            }
+
+            .logo-head {
+                padding: 4px 5px 5px 28px;
+                margin: 11px 2px 1px 27px;
+                /* margin: 0px 29px 0px 199px;  */
+            }
+
+            .logo-head img {
+                height: 15vh;
+                /* margin-left: 29px; */
+                width: 70vw;
+                padding: 7px 7px;
+                filter: contrast(386%);
+            }
+            
+            .list-head {
+                height: 98vh;
+                width: 100vw;
+                background-color: white;
+                list-style: none;
+                display: flex;
+                position: fixed;
+                top: 16vh;
+                left: -100vw;
+                z-index: 100;
+                margin: auto;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .list-head li a {
+                list-style: none;
+                margin: 29px;
+                text-decoration: none;
+                padding: 48px;
+                font-size: 36px;
+            }
+
+           
+
+            .hide {
+                display: none;
+            }
+
+            /* .cross-btn {
+    background: red;
+    height: 49px;
+    width: 51px;
+   
+    align-self: flex-end;
+    display: block;
+    margin: 81px;
+    /* float: right; */
+            /* margin: 41% 45% 48% 48% 47%; */
+            /* display: inline-flex; */
+            /* } */
+
+            */
+        }
+
+        @media screen and (min-width:1201px) {
+            .cross-btn {
+                display: inline-flex;
+            }
+        }
+    </style>
+
+    {% block style%} {% endblock %}
 
     </style>
 
@@ -86,31 +260,53 @@
 <body>
 
 
-<header>
-    <nav class="main-head">
-        <ul class="logo-head">
+    <header>
+        <nav class="main-head">
+            <!-- <button class="cross-btn" onclick="ocMenu()">CB</button> -->
 
-            {% load static %}
-            <a href="/"><img src="{%static './media/images/logo.png' %}" alt="Company"></a>
+            <ul class="logo-head">
 
-        </ul>
+                {% load static %}
+                <a class="navItems" onclick="ocMenu()" href="/"><img src="{%static './media/images/logo.png' %}"
+                        alt="Company"></a>
 
-        <ul class="list-head">
-            <li><a href="/">Home</a></li>
-            {% load static %}
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'packages' %}">Packages</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'login' %}">login</a></li>
-        </ul>
-    </nav>
-</header>
+            </ul>
+            <ul id="mobMenu" class="list-head ">
+                <li class="navItems" onclick="ocMenu()"><a href="/">Home</a></li>
+                {% load static %}
+                <li class="navItems" onclick="ocMenu()"><a href="{% url 'services' %}">Services</a></li>
+                <li class="navItems" onclick="ocMenu()"><a href="{% url 'packages' %}">Packages</a></li>
+                <li class="navItems" onclick="ocMenu()"><a href="{% url 'about' %}">About Us</a></li>
+                {% if user.is_authenticated %}
+                <li class="navItems" onclick="ocMenu()"><a href="#">My Account</a>
+                    <ul class="dropdown-head">
+                        <li>Username:<a href="#">{{request.user}}1234</a></li>
+                        <li><a href="{% url 'handleLogout' %}">Logout</a></li>
+                    </ul>
+                </li>
+                <div class="menu-icon">
+                    <span class="material-symbols-outlined">
+                        menu
+                        </span>
+                </div>
+                <!-- </li>  <a>hello ! {{request.user}}</a>  -->
 
-{% block body %}
+                {% else %}
+                <li><a href="{% url 'loginpage' %}">login</a></li>
+
+                {% endif %}
+
+
+            </ul>
+
+        </nav>
+    </header>
+
+    {% block body %}
 
 
 
-{% endblock %}
+    {% endblock %}
 </body>
 
 </html>
