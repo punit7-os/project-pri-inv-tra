@@ -22,73 +22,6 @@
     <script>
         {% block script %}
 
-        function menuIcon(){
-        // let left = 0;
-        let icon = document.getElementById('menu-btn');
-        let opcl = document.getElementById('mobMenu');
-        // let lielems = opcl.getElementsByTagName("li"); 
-            if(icon.innerHTML == 'menu'){
-                icon.innerHTML = 'close';
-                opcl.style.left = '0vw';
-                console.log("open done !!!");
-            }else{
-                    icon.innerHTML = 'menu';
-                    
-                opcl.style.left = '-83vw';
-                console.log("close done !!!");
-
-                }
-            }
-
-        // function clomenulicl(){
-        // let opcl = document.getElementById('mobMenu');
-        // opcl.style.left = '-83vw';
-        // console.log("close done  by li clicked!!!");
- 
-        //     }
-
-//         function myMove() {
-//                 let icon = document.getElementById('menu-btn');
-       
-//             if(icon.innerHTML == 'close'){
-//                 icon.innerHTML = 'menu';
-               
-//                 console.log("open done !!!");
-//             }else{
-//                     icon.innerHTML = 'close';
-
-//                 console.log("close done !!!");}
-
-//             let id = null;
-//             const elem = document.getElementById("mobMenu");   
-//             let pos = 0;
-//             clearInterval(id);
-//             id = setInterval(frame, 1);
-//             function frame() {
-//                 if (pos == -85) {
-//                     pos = 0;
-//                 elem.style.left = pos + "vw"; 
-//                 clearInterval(id);
-//                 console.log("if done")
-//                 } else if (pos == 0){
-                 
-//                 pos = -85;
-//                 elem.style.left = pos + "vw"; 
-//                 clearInterval(id);
-//                 console.log("else if done")
-
-//                 }
-//                 else{
-//                     pos++;
-
-//                     elem.style.left = pos + "vw"; 
-//                 clearInterval(id);
-//                 console.log("else done!")
-
-//                 }
-//             }
-// }
-
 
         window.addEventListener("load", () => {
             const loader = document.querySelector(".loader");
@@ -193,9 +126,10 @@
             border: 2px solid blue;
             border-radius: 30px;
         }
-        .cross-btn {
+        /* .cross-btn {
             display: none;
-        }
+
+        } */
 
         @media screen and (max-width: 1200px) {
             .main-head {
@@ -213,7 +147,7 @@
                 position: relative;
             }
 
-            .cross-btn {
+            #menu-btn {
                 background: red;
                 height: 50px;
                 width: 60px;
@@ -245,7 +179,7 @@
         display: flex;
         top: 15vh;
         padding-top: 72px;
-        left: 0vw;
+        left: -83vw;
         z-index: 100;
         margin: auto;
         flex-direction: column;
@@ -253,11 +187,11 @@
         position: absolute;
    } 
     }
-        @media screen and (min-width:1201px) {
-            .cross-btn {
+        /* @media screen and (min-width:1201px) {
+            #menu-btn {
                 display: inline-flex;
             }
-        }
+        } */
     </style>
 
     {% block style%} {% endblock %}
@@ -281,13 +215,13 @@
             </ul>
             <ul id="mobMenu" class="mobMenu ">
                 <span id="menu-btn" class="cross-btn material-symbols-outlined" onclick="menuIcon()">menu</span>
-                <li class="navItems" ><a href="/">Home</a></li>
+                <li class="navItems" id="navOne" ><a href="/">Home</a></li>
                 {% load static %}
-                <li class="navItems" ><a href="{% url 'services' %}">Services</a></li>
-                <li class="navItems" ><a href="{% url 'packages' %}">Packages</a></li>
-                <li class="navItems" ><a href="{% url 'about' %}">About Us</a></li>
+                <li class="navItems" id="nav2" ><a href="{% url 'services' %}">Services</a></li>
+                <li class="navItems" id="nav3" ><a href="{% url 'packages' %}">Packages</a></li>
+                <li class="navItems" id="nav4" ><a href="{% url 'about' %}">About Us</a></li>
                 {% if user.is_authenticated %}
-                <li class="navItems" ><a href="#">My Account</a>
+                <li class="navItems" id="nav5" ><a href="#">My Account</a>
                     <ul class="dropdown-head">
                         <li>Username:<a href="#">{{request.user}}1234</a></li>
                         <li><a href="{% url 'handleLogout' %}">Logout</a></li>

@@ -63,6 +63,23 @@ var alerts =  [].slice.call(alertList).map(function (element) {
   return new bootstrap.Alert(element)
 })
 
+function menuIcon(){
+        // let left = 0;
+        let icon = document.getElementById('menu-btn');
+        let opcl = document.getElementById('mobMenu');
+            if(icon.innerHTML == 'menu'){
+                icon.innerHTML = 'close';
+                opcl.style.left = '0vw';
+                console.log("open done !!!");
+            }else{
+                    icon.innerHTML = 'menu';
+                    
+                opcl.style.left = '-83vw';
+                console.log("close done !!!");
+
+                }
+            }
+
 
     window.addEventListener("load", () => {
    const loader = document.querySelector(".loader");
@@ -74,11 +91,15 @@ var alerts =  [].slice.call(alertList).map(function (element) {
    })
 })
 
-        // hamburger = doucment.querySelector(".hamburger");
-        // hamburger.onclick = function(){
-        //     navBar = document.querySelector(".nav-bar");
-        //     navBar.classList.toggle("active");
-        // }
+function clickClose(){
+        let menucl = document.getElementById('mobMenu');
+        menucl.style.left = '-83vw';
+        console.log("close done by new funct !!!");
+        
+    }
+    let navMenu = document.getElementById("mobMenu");
+    navMenu.querySelector("li").addEventListener("click",clickClose);
+      
 {% block script %} 
 
 
@@ -88,7 +109,7 @@ console.log(1+2);
 
 </head>
 <body>
-	
+
     
 {% block body %}
 {% endblock %}
@@ -96,4 +117,5 @@ console.log(1+2);
 <div class="loader"></div>
 
 </body>
+
 
