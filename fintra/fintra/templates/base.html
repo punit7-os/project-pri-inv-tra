@@ -21,7 +21,7 @@
     justify-content : center;
     align-items: center;
     background-color : #f7f9fb;
-    transition: opacity 0.75s, visibility 0.75s;   
+    transition: opacity 1.25s, visibility 1.25s;   
 }
 
 .loader-hidden{
@@ -70,11 +70,18 @@ function menuIcon(){
             if(icon.innerHTML == 'menu'){
                 icon.innerHTML = 'close';
                 opcl.style.left = '0vw';
+                opcl.style.background = 'white';
+                opcl.style.transitionDuration = '2s';
+                icon.style.color = 'black';
+                document.querySelector('html').style.overflow = 'hidden';
                 console.log("open done !!!");
             }else{
                     icon.innerHTML = 'menu';
+                    opcl.style.transitionDuration = '2s';
                     
-                opcl.style.left = '-83vw';
+                    opcl.style.background = 'transparent';
+                  
+                opcl.style.left = '-87vw';
                 console.log("close done !!!");
 
                 }
@@ -88,12 +95,13 @@ function menuIcon(){
 
    loader.addEventListener("transitioned", () =>{
        document.body.removeChild("loader");
+       console.log("Loader Occured!")
    })
 })
 
 function clickClose(){
         let menucl = document.getElementById('mobMenu');
-        menucl.style.left = '-83vw';
+        menucl.style.left = '-87vw';
         console.log("close done by new funct !!!");
         
     }
